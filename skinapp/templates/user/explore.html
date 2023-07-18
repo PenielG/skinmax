@@ -1,0 +1,77 @@
+{% include "parts/header2.html" %}
+
+
+<!--The home page can populate this for other contents like partner hotel-->
+<div class="layout" id="partner">  
+  <div class="container px-4" id="custom-cards">
+    <div class="row my-5">
+      <div class="col my-5">
+        <select id="brand"  class="form-select form-select-lg border-primary">
+          <option value="">ALL Brands</option>
+          {% for brand in brand %}
+          <option value="{{ brand.brand_id }}">{{ brand.brand_name }}</option>
+          {%endfor%}
+        </select>
+      </div>    
+      <div class="col my-5">
+        <input type="text" id="name"  class="form-control form-control-lg border-priamary" placeholder="Type a keyword">
+      </div>  
+      <div class="col my-5">
+        <button class="btn btn-primary noround btn-lg col-12" id="btnsearch">Search</button>
+      </div>
+    </div>
+
+
+
+    <h2 class="pb-2 border-bottom">Explore Available Products</h2>
+
+    <div class="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 py-5" id="searchcontainer">
+     {% for product in products %}
+        <div class="col">
+        
+       <img src="{{ url_for('static',filename='collections/'+product.prod_cover)}}" class="img-fluid bk" alt="">   
+
+       <div class="deets">
+        <h6><a href="/review/{{product.product_id}}"> {{ product.product_name}} </a></h6>
+        <p><i>{{ product.branddeets.brand_name}}</i></p>
+        <p><button class="btn btn-sm btn-warning">{{product.product_reviews|count}} Reviews</button></p>          
+        
+       </div> 
+       </div>
+       {% endfor %}
+  
+    
+    </div>
+  </div> 
+ </div>
+
+<!-- end more content-->
+
+
+<script src="/static/jquery.js"></script>
+<script type="text/javascript">
+ $(document).ready(function(){
+    $("#btnsearch").click(function(){
+      //retrieve the data
+      var brand = $('#brand').val()
+      var name =$('#name').val()
+      //make ajax call
+      data2send = {"brand":brand,"name":name}
+      $.ajax({
+        url:"/search/product",
+        data:data2send,
+        type:'get',
+        success:function(rsp){ 
+          $('#searchcontainer').html(rsp)
+         },
+        error:function(err){ console.log(err)}
+      })
+    })    
+  })
+
+
+</script>
+
+{% include "parts/footer.html" %}
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/css/bootstrap.min.css')}}">
+    <title>Document</title>
+</head>
+<body>
+
+    
+<div class="content" style="background-color: white;padding:3em">
+ <div>
+ 
+ </div>
+  <h3>Edit Profile</h3>
+
+  <form action="" method="post" enctype="multipart/form-data"> 
+    <div class="mb-3">
+       {{pform.fullname.label}}
+       {{pform.fullname.errors}}
+       {{pform.csrf_token}}
+       {{pform.fullname(class_="form-control",value=userdeets.user_fullname)}}
+    </div>
+
+    <div class="mb-3">
+      {% if userdeets.user_pix == None %}
+      <p class="small text-warning">Please Upload a Profile Picture</p>
+      {% endif %}
+      {{userdeets.user_pix}}
+      {{pform.pix.label}}
+      {{pform.pix.errors}}
+      {{pform.pix(class_="form-control")}}
+   </div>
+
+   <div class="mb-3">
+    {{pform.btn(class_="btn btn-primary col-12")}}
+ </div>
+  </form>
+ 
+ </div>
+
+
+
+
+ 
+</body>
+</html>

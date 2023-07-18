@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/css/bootstrap.min.css')}}">
+
+    <title>Admin Login Page</title>
+</head>
+<body>
+    <div class="container">
+
+<div class="row">
+<div class="col-lg-7">
+<div class="card shadow-lg border-0 rounded-lg mt-5">
+<div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+<div class="card-body">
+    <form action="{{url_for('admin_login')}}" method="post">
+        <div class="row justify-content-center">
+            {% set messages = get_flashed_messages() %}
+            {% for msg in messages %}
+            <p class="alert alert-info">{{msg}}</p>
+            {% endfor %}
+            <div class="col-12">
+                <div class="form-floating mb-3">
+                <input type="text" class="form-control" placeholder="Enter Username" name="username">
+                <label for="inputFirstName">Username</label>
+                <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+                </div>
+            </div> 
+
+            <div class="col-12">
+                <div class="form-floating mb-3">
+                <input type="password" class="form-control" placeholder="Enter Username" name="password">
+                <label for="inputFirstName">password</label>
+                
+                </div>
+            </div> 
+
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <button class="btn btn-primary col-12">Login</button>
+                
+                </div>
+            </div> 
+
+        </div>
+        
+    </form>
+
+
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</body>
+</html>
+
+

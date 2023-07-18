@@ -1,0 +1,62 @@
+{% extends "admin/admin_layout.html"%}
+                        {% block breadcrumbs %}
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Tables</li>
+                        </ol>
+                    {% endblock breadcrumbs %}
+                    {% block admincontent %}
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            DataTables is a third party plugin that is used to generate the demo table below.  
+                            <a href="/admin/newproduct/" class="btn btn-outline-primary">Add Product</a>
+                        </div>
+                    </div>
+
+{% if products %}
+<div class="card mb-4"></div>
+
+  <div class="card-body">
+      <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Product Skintype</th>
+                <th scope="col">Product Price</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Product</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for b in products %}
+              <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{b.product_name}}</td>
+                <td>{{b.skin_product.skintype_name}}</td>
+                <td>{{b.product_price}}</td>
+                <td>{{b.branddeets.brand_name}}</td>
+               
+
+                <td><img src="{{url_for('static',filename='collections/'+b.prod_cover)}}" height="100"></td>
+                <td>
+                  <a href="/admin/editproduct/{{b.product_id}}" class="btn btn-sm btn-primary">Edit</a> 
+                  <a href="/admin/deleteproduct/{{b.product_id}}" onclick="return confirm('Do you really want to delete {{b.product_name}}?')" class="btn btn-sm btn-danger">Delete</a> 
+              
+                
+                </td>
+              </tr>
+              {% endfor %}
+              
+          
+            </tbody>
+          </table>
+                                      </div>
+                                
+          {% else %}
+          <div class="alert alert-info">No Product has been added yet.</div>
+          {% endif %}
+
+
+                                  {% endblock admincontent %}

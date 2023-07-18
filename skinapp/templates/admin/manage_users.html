@@ -1,0 +1,48 @@
+{% extends "admin/admin_layout.html"%}
+                        {% block breadcrumbs %}
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Tables</li>
+                        </ol>
+                    {% endblock breadcrumbs %}
+                    {% block admincontent %}
+          <div class="card-body">
+            <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">User Fullname</th>
+                      <th scope="col">User Skintype</th>
+                      <th scope="col">User Email</th>
+                      <th scope="col">Registration Date</th>
+                      <th scope="col">Delete User</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for user in users %}
+                    <tr>
+                      <th scope="row">{{loop.index}}</th>
+                      <td>{{user.user_fullname}}</td>
+                     <td>{{user.skintype.skintype_name}}</td>
+                      <td>{{user.user_email}}</td>
+                      <td>{{user.user_datereg}}</td>
+                      
+      
+                    
+                      <td>
+                        
+                        <a href="/admin/deleteuser/{{user.user_id}}" onclick="return confirm('Do you really want to delete {{user.user_fullname}} from the database?')" class="btn btn-sm btn-danger">Delete</a> 
+                      </td>
+                    </tr>
+                    {% endfor %}
+                    
+                
+                  </tbody>
+                </table>
+                </div>
+                   
+
+
+                    
+                    
+                    {% endblock admincontent %}

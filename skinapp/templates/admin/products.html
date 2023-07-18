@@ -1,0 +1,11 @@
+{% extends "admin/layout.html" %}
+
+{% block banner %} 
+<img src="{{url_for('static', filename='image/pix1.jpg')}}" alt="image" width="50%">
+{% endblock %}
+
+{% block content %}
+<h4>{{ super()}}</h4>
+<h5>ALL PRODUCTS</h5>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div class="container">
+      <div class="row">
+        <div class="col">
+            <select form="form-control" id="selstate">
+                {% for state in state %}
+                 <option value="{{state.state_id}}">{{state.state_name}}</option>
+                 {% endfor %}
+               </select>
+
+                <select  form="form-control" id="lga">
+                  <option></option>
+                </select>
+            
+        </div>
+      </div>
+    </div>
+    
+    <script src="/static/jquery.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $("#selstate").change(function(){
+            var state=$(this).val()
+            var data2send="stateid="+state
+            $.get('/show_lga',data2send,function(response){
+              $('#lga').html(response)
+            })
+          })
+        })
+    </script>
+
+
+</body>
+</html>

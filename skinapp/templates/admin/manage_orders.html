@@ -1,0 +1,60 @@
+{% extends "admin/admin_layout.html"%}
+                        {% block breadcrumbs %}
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Tables</li>
+                        </ol>
+                    {% endblock breadcrumbs %}
+                    {% block admincontent %}
+          <div class="card-body">
+            <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">User Fullname</th>
+                      <th scope="col">Product Name</th>
+                      <th scope="col">Delivery Address</th>
+                      <th scope="col">Order Date</th>
+                      <th scope="col">Order UnitPrice</th>
+                      <th scope="col">Order Quantity</th>
+                      <th scope="col">Order Amount</th>
+                      <th scope="col">Order State</th>
+                      <th scope="col">Order Lga</th>
+                      <th scope="col">Delete User</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for order in order %}
+                    <tr>
+                      <th scope="row">{{loop.index}}</th>
+                      <td>{{order.user_order.user_fullname}}</td>
+                      <td>{{order.product_ordered.product_name}}</td>
+                      <td>{{order.order_delivery_address}}</td>
+                      <td>{{order.order_date}}</td>
+                      <td>{{order.order_unitprice}}</td>
+                      <td>{{order.order_product_qty}}</td>
+                      <td>{{order.order_amount}}</td>
+                      <td>{{order.stateof_order.state_name}}</td>
+                      <td>{{order.lgaof_order.lga_name}}</td>
+                      
+                     
+                      
+      
+                    
+                      <td>
+                        
+                        <a href="/admin/deleteuser/{{order.order_id}}" onclick="return confirm('Do you really want to delete {{order.order_product_id}} from the database?')" class="btn btn-sm btn-danger">Delete</a> 
+                      </td>
+                    </tr>
+                    {% endfor %}
+                    
+                
+                  </tbody>
+                </table>
+                </div>
+                   
+
+
+                    
+                    
+                    {% endblock admincontent %}

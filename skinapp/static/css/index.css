@@ -1,0 +1,133 @@
+
+
+   .bg{
+    background-image: url(/static/image/image3.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 200px;
+   }
+
+   .no_underline{
+    color: #BFAB25;
+    text-decoration: none;
+   }
+
+   .gold{
+    color: #BFAB25;
+   }
+
+   .bg_blue{
+    background-color: #2E294E;
+   }
+
+   .a-tag {
+    text-align: center;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #337ab7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+   
+   
+   .overlay{
+      min-height: 400px;
+    background-color: rgba(0, 0, 0, 0.4);
+   
+   }
+
+   .overlay_div{
+    justify-content: right;
+    text-align:center;
+    padding: 10px; 
+    padding-bottom: 10px;
+    padding-top:50px;
+    border-radius: 20px; 
+    background-color: white;
+   }
+
+   .header1{
+    color: black;
+    text-align: justify;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+   }
+
+   .care{
+  
+    padding: 5px;
+    
+   }
+   .p1{
+    padding: 5px; 
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+   }
+
+   .choose h6{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 30px;
+   }
+
+    .choose{
+    margin-right: -50px;
+   } 
+
+   .curved_div{
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    margin-top: -170px;
+
+   }
+
+   .link_footer{
+    padding: 10px
+   }
+
+   .list-hidden {
+  display: none;
+}
+
+.hover-link:hover + .list-hidden {
+  display: block;
+}
+
+.line{
+  border: none;
+  border-top: 1px solid rgb(188, 184, 184);
+  width: 100%;
+  margin-top: 3px;
+}
+
+    .profile_picture{
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .a_product{
+        text-decoration: none;
+    }
+
+    .profile_div{
+        border-radius: 40px;
+        background-color: white;
+        padding: 10px;
+        min-height: 40px;
+    }
+    
+    .gen_row{
+        background-color: rgb(240, 238, 235);
+        min-height: 300px;
+    }
+
+
+
+
+

@@ -1,0 +1,15 @@
+{% extends "admin/layout.html" %}
+
+{% block content %}
+
+<ol>
+    {% for x in users %}
+    <li>
+        <p> {{x}}</p>
+    </li>
+ 
+   {% endfor %}
+</ol>
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+Step 1: We created a folder name "book"
+
+step2: we created a sub folder names "bookapp"
+
+step 3:set up your virtual env 
+   python -m venv venv which is book(python -m venv vbook)
+
+step 4:activate the venv and install packages
+      vbook\Scripts\activate
+
+step 5: then we copied the requirement.txt into our folder and we read from it
+      pip install -r requirement.txt
+
+step 6: we copied init.py, static folder, template folder from fapp to bookapp 
+and delete the content
+
+step 7: edit __init__.py: change all apprearances of 'fapp' to 'bookapp' 
+since this we have a new name for our new project
+
+step 8: within template folder, create folder admin and folder user
+
+step 9: copy starter.py from flaskapp and paste into book
+
+step 10: copy forms.py from flaskapp and paste into book
+
+step 11: copy models.py from flaskapp and paste into book
+
+===================================================================
+
+1. We set form action

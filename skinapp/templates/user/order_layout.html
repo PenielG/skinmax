@@ -1,0 +1,210 @@
+{% include "parts/header2.html" %}
+
+
+<div class="container-fluid">
+    <div class="row my-5">
+        <div class="col-md-4 my-5">
+
+          <a href=""><img src="{{ url_for('static',filename='collections/' + product.prod_cover)}}"alt="" width="100%"></a> 
+        </div>
+
+        <div class="col-md-4 my-5">
+           <p class="my-4" style="font-size: 25px;">{{product.product_name}}</p>
+           <h3 class="my-4">{{product.product_price}}</h3>
+      
+
+           <h2 class="pb-2 border-bottom my-5">Product Review</h2>
+
+             <h6><a href="/reviews/{{product.product_id}}">{{product.product_name}}</a> </h6>
+             
+             <p><i><strong>Brand: </strong>{{product.branddeets.brand_name}}</i></p>
+             <p><button class="btn btn-sm btn-warning" href="">{{product.product_reviews|count}}Reviews</button></p>  {# to generate a dynamic numbers#}      
+      
+
+          
+           
+        </div>
+
+        <div class="col-md-3 my-5 mx-4">
+          <form action="" method="post">
+            <input type="hidden" name="product_id" value="{{ product.product_id }}">
+            <input type="hidden" name="product_price" value="{{ product.product_price }}">
+
+            
+            <h6 class="form-label my-4">Choose your Location</h6>
+            <label for="states">Select Delivery State</label>
+            <select name="order_state" class="form-control my-3" id="order_state" required>
+             
+
+              {% for state in states %}
+               <option value="{{state.state_id}}" id="state">{{state.state_name}}</option>
+               {% endfor %}
+            </select>
+            <label for="lga">LGA</label>
+            <select name="order_lga" class="form-control my-1" id="order_lga" required> 
+             
+           <option value="{{lga.lga_id}}"></option>
+             
+            </select>
+            <textarea name="delivery_addr"   placeholder="Please Input Delivery Address" class="form-control my-3" required></textarea>
+
+            
+            <div style="display: none;" id="cart-content" class="my-5">
+              <label for="quanty">Quantity:</label>
+        
+                  <button id="minus-btn"  value="0" onclick="decrementValue()" type="button" class=" btn-outline-primary">-</button>
+       
+                <input type="text" name="order_qty" class="col-1" value="1" id="value" readonly >
+                  
+                <button id="plus-btn" value="1" onclick="incrementValue()" type="button" class=" btn-outline-primary">+</button>
+ 
+             </div>
+  
+             <button class="btn btn-lg  btn-primary my-5 mx-1" id="view_btn" type="button" onclick="addToCart()">Buy Now</button>
+
+        <button class="btn btn-lg  btn-primary  mx-1" id="btn_order" style="display: none;" >Make Order</button>
+          
+            <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+
+      
+
+            
+          </form>
+          </div>
+
+                </div>
+              </div> 
+          
+          </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script src="/static/jquery.js"></script>
+<script type="text/javascript">
+
+var valueElement = document.getElementById("value");
+var cartCountElement = document.getElementById("cart-count");
+var cartCount = 0;
+
+function incrementValue() {
+  var currentValue = parseInt(valueElement.value);
+  valueElement.value = currentValue + 1;
+  updateCartCount(1);
+}
+
+
+
+function decrementValue(){
+    var currentValue=parseInt(valueElement.value);
+    if (currentValue > 1){
+        valueElement.value=currentValue - 1
+        updateCartCount(-1);
+    }
+};
+
+function updateCartCount(quantity) {
+  cartCount += quantity;
+  cartCountElement.textContent = cartCount
+}
+
+function updateValue(currentValue) {
+    var valueElement = document.getElementById("value");
+    var cartCountElement = document.getElementById("cart-count");
+    if (valueElement == 1){
+        cartCountElement == 1
+    }else{
+        valueElement == cartCountElement
+    }
+    
+  // Perform any necessary logic with the value
+  // For example, you can update the value in your database or perform other operations
+  console.log("Value updated:", currentValue);
+}
+ 
+function addToCart() {
+  var cartContent = document.getElementById("cart-content");
+  var btn2_hide = document.getElementById("view_btn")
+  var btn2_display = document.getElementById("btn_order")
+  if (cartContent.style.display = "block"){
+    btn2_hide.style.display = "None"
+    btn2_display.style.display = "block"
+  }
+
+
+  
+  var currentValue = parseInt(valueElement.value);
+  updateValue(currentValue);
+  updateCartCount(currentValue);
+}
+
+// Get the quantity span element and the hidden input element
+const quantitySpan = document.getElementById('value');
+const hiddenInput = document.getElementById('hidden_value');
+
+// Add an event listener to the quantity span element
+quantitySpan.addEventListener('input', function() {
+  // Get the updated quantity value
+  const quantity = quantitySpan.innerText.value;
+
+  // Update the value of the hidden input
+  hiddenInput.value = quantity;
+});
+
+
+
+
+  $(document).ready(function() {
+  $('#order_state').change(function() {
+    var stateId = $(this).val();
+    
+    $.ajax({
+      url: "/product/Neutrogena:Hydro_Boost_Water_Gel", // Replace with your server-side endpoint
+      method: 'GET',
+      data: { "state": stateId },
+      dataType: 'json',
+      success: function(data) {
+        // Clear the localGovtSelect options
+        $('#order_lga').empty();
+
+        // Add new options for local governments
+        $.each(data, function(index, localGovt) {
+          $('#order_lga').append('<option value="' + value.id + '">' + value.name + '</option>')
+        });
+      },
+      error: function(xhr, status, error) {
+        console.log(error);
+      }
+    });
+  });
+});
+
+$(document).ready(function(){
+          $("#order_state").change(function(){
+            var state=$(this).val()
+            var data2send="stateid="+state
+            $.get("/show_lga",data2send,function(response){
+              $('#order_lga').html(response)
+            })
+          })
+        })
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+{% include "parts/footer.html" %}

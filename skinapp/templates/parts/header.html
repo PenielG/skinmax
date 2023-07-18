@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {# 
+        <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+        #}
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/css/bootstrap.min.css')}}">
+    <title>About Us</title>
+</head>
+<body>
+{#
+
+    <a href="/">Home Page</a>
+    <a href="/aboutus/">About Us</a>
+    <a href="/contact/">Contact Us</a>
+    <a href="/ourteam">Our Team</a>
+
+#}
+   
+    <p>
+        <a href="/">Home Page</a>
+        <a href="{{url_for ('about')}}">About Us</a>
+        <a href="{{url_for ('contact_us')}}">Contact Us</a>
+        <a href="{{url_for ('our_team')}}">Our Team</a>
+      
+
+    </p>
+
+
+    <nav class="navbar navbar-light bg-dark">
+        <div class="container-fluid" style="background-color:whitesmoke;">
+          <div>
+            <img src="/static/image/skinmax_logo.png" alt="logo" width="15%" class="center-img">  
+           </div>
+           
+          
+      
+      
+      
+           <button class="navbar-toggler bg_gold" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: #EDF5FC">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">SKINMAX</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+      
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/home/">Home</a>
+                </li>
+      
+                {% if session.get('user_id') == None %}
+                <li class="nav-item">
+                  <a class="nav-link" href="/signup/" style="color: black;">Sign Up</a>
+                </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link" href="/login/" style="color: black;">Login</a>
+                  </li>
+                  {% endif %}
+      
+                  
+                
+                  {% if session.get('user_id') and session.get('user_loggedin') %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="/user/dashboard/" style="color: black;">Dashboard</a>
+                  </li>
+                  {% endif %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="/allproduct_reviews/" style="color: black;">Reviews</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/signout" style="color: black;">Logout</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/aboutus/" style="color: black;">About Us</a>
+                  </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Know your skin type
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                    <li><a class="dropdown-item" href="/skintype/">Skintype</a></li>
+                    <li><a class="dropdown-item" href="/skinglow">Skinglow</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/routine/">Your Routine</a></li>
+                  </ul>
+                </li>
+              </ul>
+           
+                <form class="d-flex" style="padding: 10px;">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+      
+              </div>
+      
+          </div>
+        </div>
+      </nav>
+      
+   

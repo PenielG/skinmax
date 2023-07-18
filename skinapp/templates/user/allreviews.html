@@ -1,0 +1,52 @@
+{% extends "user/layout.html" %}
+
+{% block banner %}
+
+{% endblock %}
+{% block content %}
+
+
+   <div class="content py-3 ">
+    <div class="row g-5 my-5"> 
+        {% for review in review %}
+    <div class="col-md-4 my-5">
+      <div class="position-sticky my-3" style="top: 2rem;">
+    
+       
+ 
+     
+    
+
+   
+      <h5 class="pb-4 mb-4 fst-italic border-bottom mx-4">
+        {{review.product.product_name}}</h5>
+        <div class="mx-5"><img src="{{ url_for('static', filename='collections/' + review.product.prod_cover) }}" alt="{{ review.product.product_name }}" class="img-fluid"  style="max-height:100px"></div>
+        <p style="font-family: 'Courier New';" class="mx-4">{{review.rev_text}}</p>
+        <p class="blog-post-meta mx-4">{{review.rev_date}}<a href="#" class="text-decoration-none">  by {{review.reviewby.user_fullname}}</a></p>
+        </div>
+        </div>
+        {% endfor %}
+        
+        
+       
+           <article class="blog-post">
+        <h5 class="blog-post-title mx-4">I love it!</h5>
+        <p class="blog-post-meta mx-4">Reviewed on January 1, 2021 by <a href="#">Santa</a></p>
+
+        <hr> 
+      </article>
+
+    
+
+   
+
+
+
+
+
+
+   </div>
+  {%endblock content%}
+
+  {% block morecontent %}{% endblock morecontent%} 
+{% block featured %}{%endblock%}

@@ -1,0 +1,85 @@
+{% extends "admin/admin_layout.html" %}
+{% block breadcrumbs %}
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="/admin/dashboard"></a>Dashboard</li>
+      <li class="breadcrumb-item active">Add Product</li>
+</ol>
+{% endblock breadcrumbs %}
+
+{% block admincontent %}
+        
+<form action="" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+ 
+    </div>
+
+      <div class="mb-3 my-3">
+      <label for="title" class="form-label">Product Name</label>
+      {{product_name}}
+      <input type="text" class="form-control" id="title" name="name" value="{{product}}">
+
+      </div>
+
+      <div class="mb-3">
+          <label for="title" class="form-label">Brand</label>
+        <select name="prodbrand" id="brand" class="form-control">
+          <option value="">Please select Product Brand</option>
+        
+          {% for product in addproduct %}
+          <option value="{{product.brand_id}}">{{product.brand_name}}</option>
+          {% endfor %}
+        </select>
+
+        </div>
+
+        <div class="mb-3">
+          <label for="title" class="form-label">Skintype for Product</label>
+          <select name="skintype" id="skintype" class="form-control">
+              <option value="">Please Select Skintype</option>
+            
+              {% for s in skintype %}
+              <option value="{{s.skintype_id}}">{{s.skintype_name}}</option>
+           
+              {% endfor %}
+             
+             
+              <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+            </select>
+
+          </div>
+          <div>
+             
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="customFile">Upload Product</label>
+            <input type="file" class="form-control" id="customFile" name="cover">
+          </div>
+
+          
+      <div class="mb-3">
+          <label for="title" class="form-label">Product Price</label>
+          <input type="text" class="form-control" id="title" name="price" placeholder="Price (in Naira)">
+
+          </div>
+
+          <div class="mb-3">
+              <label class="form-label" for="customFile" >Description</label>
+              <textarea  class="form-control" name="desc" placeholder="{{product.product_name}}"></textarea>
+          </div>
+          
+         
+          <button type="submit" class="btn btn-primary">Add Book!</button>
+        </form>
+
+
+                          </div>
+                      </div>
+{% endblock admincontent %}
+
+
+
+
+
+
+

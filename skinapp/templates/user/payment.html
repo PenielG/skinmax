@@ -1,0 +1,34 @@
+{%extends "user/layout.html"%}
+
+{% block banner %} {% endblock %}
+
+{% block content %}
+ <div class="row my-5">
+
+    <div class="col-md my-5 mx-5">
+    
+
+        <form action="/paystack" method="post">
+         {# <p>Please confirm the amount you are donating</p>#}
+          <p>Amount: {{trxdeets.order_amount}}</p>
+          <p class="text-danger">Ref Number: {{trxdeets.order_refno}}</p>
+    
+          <button class="btn btn-danger">Confirm Payment</button>
+          <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        </form>
+    </div>
+
+ </div>   
+
+
+<div class="content" style="background-color: white;padding:3em">
+
+  <h3>Welcome{{userdeets.user_fullname}}!</h3>
+  <p>This is your dashboard, please use the second-level menu to carry out tasks</p>
+ </div>
+{%endblock%}
+
+{% block morecontent %}{% endblock morecontent%} 
+{% block featured %}{%endblock%}
+
+ 

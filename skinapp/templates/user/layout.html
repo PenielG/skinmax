@@ -1,0 +1,37 @@
+{% include "parts/header2.html" %}
+
+{% block banner %}
+ <div class="container-fluid">
+<div class="row">
+ <img src="/static/image/care5.jpg" alt="" class="img-fluid">
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="row">
+        {% for product in product %}
+        <div class="col-md-4">
+ 
+           <div>
+            <a href=""><img src="{{ url_for('static',filename='collections/' + product.prod_cover)}}"alt="" width="100%"></a>
+           </div>
+         <div>
+            <p>{{product.product_name}}</p>
+            <p style="padding: 20px;background-color: antiquewhite;">{{product.product_price}}</p>
+         </div>
+          
+           
+           </div>
+           {% endfor %} 
+{% endblock %}
+
+
+</div>
+ </div>
+
+
+
+
+{% include "parts/footer.html" %}

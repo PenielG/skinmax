@@ -1,0 +1,98 @@
+{% include "parts/header2.html" %}
+
+
+    <style type="text/css">
+        /* div{
+            border: 1px solid red;
+            min-height: 50px;
+        } */
+
+        .go{
+           text-decoration: none; 
+           text-align: right; 
+           padding-right: 10px; 
+           background-color: white; 
+           color: black; 
+           padding: 25px; 
+           margin: 30px; 
+      }
+
+      .form{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+       
+
+    
+
+
+    
+
+
+    </style>
+
+
+        <div class="row my-5 mx-5" style="padding-top: 20px; text-align: justify; padding-left: 10px;">
+      <h3>Create an account on Skinclue</h3>
+          
+          </div> 
+ 
+         </div>
+
+         <div class="row form mx-4" style="padding-top: 10px;">
+            <div class="col-md-6 mx-5 form" style="background-color:whitesmoke;border-radius: 25px">
+               <div class="col-md-8 my-5 mx-5" style="padding-left: 10px;">
+                     <form action="">
+                  
+                     <input type="text" name="firstname" id="user" class="form-control my-2" placeholder="firstname" required>
+                 
+                     <input type="text" name="lastname" id="user" class="form-control my-4" placeholder="lastname" required>
+
+                     <input type="email" name="lastname" id="user"  class="form-control my-4 " placeholder="email" required>
+                  
+                     <input type="password" name="lastname" id="user" class="form-control my-4 " placeholder="password" required>
+
+                     <input type="password" name="lastname" id="user" class="form-control my-4 " placeholder="confirm password" required>
+                      <label class="my-3">Gender</label> <br>
+                    <span>Male</span> <input type="radio" name="gender" value="male" required="required"><label class="" style="color:black"> 
+                      <span>Female</span><input type="radio" name="gender" value="female" required="required"><label class="" style="color:black">
+                     <label for="skin care" class="my-3">Skin Type</label>
+                     <select name="" id="" class="form-control">
+                       <option>Please Select</option>
+                       <option value="Oil Skin"  >Oil Skin</option>
+                       <option value="Dry Skin">Dry Skin</option>
+                       <option value="Combination">Combination</option>
+
+                     </select>
+
+                     <label for="existing Skin Care Routine?" class="my-3">Existing Skin Care Routine?</label>
+                     <select name="" id="" class="form-control">
+                       <option>Please Select</option>
+                       <option value="yes"  >Yes</option>
+                       <option value="no">No</option>
+                     </select>
+
+                     <label for="If Yes" class="my-3">If Yes, Kindly Provide Skin Care Routine Type:</label>
+                     <select name="" id="" class="form-control">
+                       <option>Please Select</option>
+                       <option value="cleanser"  >cleanser</option>
+                       <option value="face cream">Face cream</option>
+                       <option value="cleanser"  >cleanser</option>
+                       <option value="face cream">Face cream</option>
+                     </select>
+
+                     <label for="If Yes" class="my-3">Kindly Provide us with Skin Care Problem Encountered recently:</label>
+                     <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea> <br>
+                     <button type="button" class="btn btn-primary mx-3 mb-3 form-control">Create Account</button>
+                     <div> <span>Already have an account?</span><a href="/login/" class="mx-5" \>Log in</a></div>
+                     <div></div>
+
+
+                      
+                    
+                </form>
+
+               </div>
+              
+            </div>
+
+            {% include "parts/footer.html" %}

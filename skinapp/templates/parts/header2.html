@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skinclue is an online platform that provides personalized skin care routine consultation to clients and recommend helpful products that are tailored to their skin type">
+    <meta name="keywords" content="skin care, skin care routine, beauty products, cleanser, how to care for your skin, oil skin, dry skin, personalized skin care products, pimples care">
+    <meta name="author" content="Toyosi Oreniyi">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/css/bootstrap.min.css')}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/fav/favicon-96x96.png">
+
+    <link href="/static/fontawesome/css/all.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/index.css" rel = "stylesheet" type="text/css">
+    <title>Skinmax</title>
+
+<style>
+.togg{
+  background-color: white;
+}
+</style>
+   
+
+
+
+    
+
+
+
+</head>
+<body>
+  
+ 
+
+<nav class="navbar navbar-expand-sm bg-body-tertiary bg_blue">
+  <div class="container-fluid">
+    <button class="navbar-toggler togg" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+   
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <li class="nav-item">
+        <li class="nav-item">
+          <a class="nav-link active" href="/home/"> <img src="/static/image/skinmax_logo.png" alt="logo" width="15%" class="center-img">  </a>
+      </li>
+
+        <li class="nav-item">
+          <a class="nav-link active gold" aria-current="page" href="/home/">Home</a>
+        </li>
+        {% if session.get('user_id') == None %}
+        <li class="nav-item">
+          <a class="nav-link gold" href="/signup/" >Sign Up</a>
+        </li>
+       
+        <li class="nav-item">
+            <a class="nav-link gold" href="/login/">Login</a>
+          </li>
+          {% endif %}
+
+          {% if session.get('user_id') and session.get('user_loggedin') %}
+          <li class="nav-item">
+            <a class="nav-link gold" href="/user/dashboard/" >Dashboard</a>
+          </li>
+          {% endif %}
+
+          <li class="nav-item">
+            <a class="nav-link gold" href="/allproduct_reviews/">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link gold" href="/signout">Logout</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link gold" href="/aboutus/">About Us</a>
+          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle gold" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Know your skin type
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+            <li><a class="dropdown-item " href="/skintype/">Skintype</a></li>
+            <li><a class="dropdown-item" href="/skinglow">Skinglow</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="/routine/">Your Routine</a></li>
+          </ul>
+        </li>
+
+
+      </ul>
+   
+    </div>
+  </div>
+</nav>
+
+
+    
+
+
+

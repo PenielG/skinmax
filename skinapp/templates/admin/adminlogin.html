@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skinclue is an online platform that provides personalized skin care routine consultation to clients and recommend helpful products that are tailored to their skin type">
+    <meta name="keywords" content="skin care, skin care routine, beauty products, cleanser, how to care for your skin, oil skin, dry skin, personalized skin care products, pimples care">
+    <meta name="author" content="Toyosi Oreniyi">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/css/bootstrap.min.css')}}">
+    <link href="/static/fontawesome/css/all.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/index.css" rel = "stylesheet" type="text/css">
+    <title>ADMIN PAGE</title>
+
+
+   
+<style>
+   
+</style>
+<body  style="background-color: aquamarine;">
+      <div class="container-fluid" >
+
+        <h3  style="text-align: center;" class="my-3">ADMIN LOGIN</h3>
+         <div class="row col-6 my-5 mx-5" style="border-radius: 10px; background-color: aliceblue;">
+          <div class="my-3" style="justify-content: center;">
+            <form action="" method="post">
+             {{adminlogin.username.label}}
+             {{adminlogin.errors}}
+             {{adminlogin.username(class_="form-control",value=adminlogin.admin_username)}}
+             {{adminlogin.csrf_token}}
+
+
+            </div>
+
+            <div class="my-2">
+                {{adminlogin.password.label}}
+                {{adminlogin.errors}}
+                {{adminlogin.password(class_="form-control")}}
+                {{adminlogin.csrf_token}}
+            </div>
+
+            <div class="my-3">
+                {{adminlogin.btn(class_="btn btn-lg btn-primary col-12")}}
+                {{adminlogin.crsf_token}}
+            </div>
+            </form>
+             
+         </div>
+
+        
+      </div>
+</body>
+</html>

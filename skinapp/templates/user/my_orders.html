@@ -1,0 +1,52 @@
+{% extends "user/dashboard.html" %}
+
+
+{% block content %}
+
+<div class="card-body">
+    <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th scope="col">User Fullname</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Delivery Address</th>
+              <th scope="col">Order Date</th>
+              <th scope="col">Order UnitPrice</th>
+              <th scope="col">Order Quantity</th>
+              <th scope="col">Order Amount</th>
+              <th scope="col">Order State</th>
+              <th scope="col">Order Lga</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+         {% for order in order %}
+            <tr>
+              <td>{{loop.index}}</td>
+              <td>{{order.user_order.user_fullname}}</td>
+              <td>{{order.product_ordered.product_name}}</td>
+              <td>{{order.order_delivery_address}}</td>
+              <td>{{order.order_date}}</td>
+              <td>{{order.order_unitprice}}</td>
+              <td>{{order.order_product_qty}}</td>
+              <td>{{order.order_amount}}</td>
+              <td>{{order.stateof_order.state_name}}</td>
+              <td>{{order.lgaof_order.lga_name}}</td>
+              
+             
+              
+
+            
+           
+              </td>
+            </tr>
+            {% endfor %}
+        
+        
+          </tbody>
+        </table>
+        </div>
+           
+
+{% endblock %}

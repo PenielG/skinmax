@@ -1,0 +1,116 @@
+{% include "parts/header2.html" %}
+
+
+<div class="container-fluid">
+<div class="row my-2 gen_row">
+<div class="col-md-3 my-5">
+    <div class="my-5 profile_div">
+        <div class="dropdown">
+
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            
+                {% if userdeets %}
+              
+                <img src="/static/images/profile/{{userdeets.user_pix}}" alt="mdo" width="32" height="32" class="profile_picture">
+          
+              
+              
+                {% else %}
+                <img src="/static/image/admin.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+             
+              {% endif %}
+            </a>
+         
+    <br><span>{{userdeets.user_fullname}}</span>      
+              
+       
+       
+            <ul class="dropdown-menu text-small">
+              <li><a class="dropdown-item" href="/profile/">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/signout">Sign out</a></li>
+            </ul>
+            <br> <br>
+            <a href="user/dashboard" class="a_product">Dashboard</a>
+            <br> <br>
+               <a href="/" class="a_product">Products</a>
+               <br> <br>
+               <a href="" class="a_product">Wishlist</a>
+               <br> <br>
+               <a href="/myorders" class="a_product">Orders</a> 
+               <br> <br>
+               <a href="/explore" class="a_product">explore</a> 
+
+               <div style="padding-bottom: 100px;"></div>
+               <br><br><br> <br><br><br>
+               <br><br><br>               <a href="/signout" class="a_product">Logout</a>
+          </div>
+        </div>
+    </div>
+
+<div class="col-md-8 my-5">
+<div class="row my-5" style="border-radius: 10px;background-color: white;">
+    
+    <div class="col-md-6 dashboard my-5"  >
+        {% set message= get_flashed_messages() %}
+        {% for msg in message %}
+        <p class="alert alert-success">{{msg}}</p>
+        {% endfor %}
+        <h2 class="text-center">Skinmax</h2> <br><br>
+        <h3>Hi {{userdeets.user_fullname}}!</h3>
+        <h4>Reveal Your Most Radiant Glow</h4> 
+
+</div>
+
+    <div class="col-md my-5">
+    <span>  <img src="/static/image/image_oily.jpg" alt="" class="rounded-circle" width="100%"></span>
+    </div>
+
+</div>
+
+{% block content %}
+<div class="row" >
+    <h4 class="mx-3">SHOP BY SKINCARE CONCERN</h4>
+    <div class="col-md-4 my-2">
+        <a href="/dryskin/"><img src="/static/image/Neut_dry.png" alt="dry_skin_product" class="img-fluid"></a>
+        <p class="my-2">DRY AND DEHYDRATED SKIN</p>
+    </div>
+
+    <div class="col-md-4 my-2">
+        <a href="/oilskin"><img src="/static/image/cetaphil_cleanser_oily.jpg" alt="oily_skin_product" class="img-fluid"></a>
+        <p class="my-2 mx-5">OILY SKIN</p>
+    </div>
+
+    <div class="col-md-4 my-2">
+ <a href="/sensitiveskin/"><img src="/static/image/eucerin_sensitive_img.jpeg" alt="sensitive_skin_product" class="img-fluid"></a>
+        <p class="my-2 mx-4">SENSITIVE SKIN</p>
+    </div>
+
+    <div class="col-md-4">
+        <a href="/normalskin/"><img src="/static/image/cetaphil_cleanser_combo.png" alt="dry_skin_product" class="img-fluid"></a>
+        <p class="my-2 mx-4">NORMAL SKIN</p>
+    </div>
+
+    
+
+</div>
+
+{% endblock %}
+
+     
+</div>
+   
+      
+    </div>
+
+</div>
+
+
+
+
+
+
+
+{% include "parts/footer.html" %}

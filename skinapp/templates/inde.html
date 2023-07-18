@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skinclue is an online platform that provides personalized skin care routine consultation to clients and recommend helpful products that are tailored to their skin type">
+    <meta name="keywords" content="skin care, skin care routine, beauty products, cleanser, how to care for your skin, oil skin, dry skin, personalized skin care products, pimples care">
+    <meta name="author" content="Toyosi Oreniyi">
+    <link href="static/bootstrap/css/bootstrap.css", rel="stylesheet", type="text/css">
+    {# <link rel="stylesheet" href="{{url_for('static',filename='bootstrap/css/bootstrap.min.css')}}">#}
+    <title>Final Project</title>
+
+
+    <style type="text/css">
+        /* div{
+            border: 1px solid red;
+            min-height: 50px;
+        } */
+
+
+     .bg{
+      background-image: url(/static/image/image2.jpg);
+      background-size: 100% 700px;
+      min-height: 500px;
+     }
+
+     	
+			.form{
+					  
+					  background-color:rgba(0,0,0,0.7);
+            min-height: 500px;
+				
+				    }
+
+      .div_gen {
+        
+          padding-top: 5px;
+          padding-left: 10px;
+          padding-right: 10px;
+          text-align: justify; 
+
+      }
+
+      .div_bg-sec{
+        justify-content: space-evenly;
+        padding: 10px;
+      }
+
+      .div_sec{
+        margin-top: -10px;
+        padding-bottom: 5px;
+        
+      }
+
+      .go{
+           text-decoration: none; 
+           text-align: right; 
+           padding-right: 10px; 
+           background-color: white; 
+           color: black; 
+           padding: 25px; 
+           margin: 30px; 
+      }
+
+
+
+    
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="container" id="top" style="min-height: 500px;"> 
+       
+        <div class="container-fluid" >
+          <!-- Nav Start -->
+          <nav class="navbar navbar-light bg-light fixed-top" >
+            <div class="container-fluid" style="background-color: #B497D6">
+              <h4 style="color: white;" >Skinclue</h4>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">SKINCLUE</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="form.html">Sign Up</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                        <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+   
+ 
+
+            
+
+        </div>
+         
+          <div class="container-fluid bg ">
+
+            <div class="row mt-3 form container-fluid">
+
+              <div class="col-md-11 " style="padding: 20px; text-align:justify; padding-right: 10px;margin: 50px; color: white;">
+                It's essential to know your skin type if you want healthy and flawless skin. 
+                Knowing your skin type allows you to select the right products and customize a 
+                skin care regimen that will work best for you. The main skin types to consider include:
+                 dry, oily, combination, normal, acne-prone, and sensitive. You might be wondering how 
+                 in the world you will ever differentiate between all these skin types! But don’t worry. 
+                 There are simple ways to determine your skin type.
+                 It's essential to know your skin type if you want healthy and flawless skin. 
+                 Knowing your skin type allows you to select the right products and customize a 
+                 skin care regimen that will work best for you. The main skin types to consider include:
+                  dry, oily, combination, normal, acne-prone, and sensitive. You might be wondering how 
+                  in the world you will ever differentiate between all these skin types! But don’t worry. 
+                  There are simple ways to determine your skin type.
+                  It's essential to know your skin type if you want healthy and flawless skin. 
+                  Knowing your skin type allows you to select the right products and customize a 
+                  skin care regimen that will work best for you. The main skin types to consider include:
+                   dry, oily, combination, normal, acne-prone, and sensitive. You might be wondering how 
+                   in the world you will ever differentiate between all these skin types! But don’t worry. 
+                   There are simple ways to determine your skin type.
+              </div>
+    
+            
+    
+           </div>
+
+          </div>
+     
+
+        
+  
+
+       <div class="row "> <div class=" col-md-11 mx-5 my-2 div_gen">General Skin Care
+        It's essential to know your skin type if you want healthy and flawless skin. 
+        Knowing your skin type allows you to select the right products and customize a 
+        skin care regimen that will work best for you. The main skin types to consider include:
+         dry, oily, combination, normal, acne-prone, and sensitive. You might be wondering how 
+         in the world you will ever differentiate between all these skin types! But don’t worry. 
+         There are simple ways to determine your skin type. <br> <br>
+         General Skin Care
+        It's essential to know your skin type if you want healthy and flawless skin. 
+        Knowing your skin type allows you to select the right products and customize a 
+        skin care regimen that will work best for you. The main skin types to consider include:
+         dry, oily, combination, normal, acne-prone, and sensitive. You might be wondering how 
+         in the world you will ever differentiate between all these skin types! But don’t worry. 
+         There are simple ways to determine your skin type.
+        
+        </div>
+       </div>
+
+       <div class="row div_bg-sec my-5" >
+
+           <div class="col-md-3 div_sec" >OIL SKIN<br> <img src="image.webp" alt="ladypix" width="100%">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+              Expedita omnis facere suscipit id harum vel, magnam modi laudantium debitis accusamus
+               asperiores ab aperiam animi ad. Quas corporis obcaecati impedit nostrum!
+               Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+               Expedita omnis facere suscipit id harum vel, magnam modi laudantium debitis accusamus
+                asperiores ab aperiam animi ad. Quas corporis obcaecati impedit nostrum!
+              
+
+           </div>
+
+           <div class="col-md-3 div_sec">DRY SKIN <br> <img src="image.webp" alt="ladypix" width="100%">
+            
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Expedita omnis facere suscipit id harum vel, magnam modi laudantium debitis accusamus
+             asperiores ab aperiam animi ad. Quas corporis obcaecati impedit nostrum!
+             Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+             Expedita omnis facere suscipit id harum vel, magnam modi laudantium debitis accusamus
+              asperiores ab aperiam animi ad. Quas corporis obcaecati impedit nostrum!
+
+           </div>
+
+           <div class="col-md-3 div_sec">COMBO <br><img src="image.webp" alt="ladypix" width="100%">
+
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Expedita omnis facere suscipit id harum vel, magnam modi laudantium debitis accusamus
+             asperiores ab aperiam animi ad. Quas corporis obcaecati impedit nostrum!
+             Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+             Expedita omnis facere suscipit id harum vel, magnam modi laudantium debitis accusamus
+              asperiores ab aperiam animi ad. Quas corporis obcaecati impedit nostrum!
+
+           </div>
+           
+       </div>
+
+       <div class="row">
+
+       </div>
+
+       <div class="row" style="background-color: #B497D6;">footer
+          
+      <div class="col-md-2 mx-3" style="padding-top: -20px;">
+        Lorem ipsum dolor sit amet consectetur,   Lorem ipsum dolor sit amet consectetur, 
+        Lorem ipsum dolor sit amet consectetur,   
+      
+      </div>
+
+      <div class="col-2">
+
+      </div>
+
+      <div class="col-2">
+
+        
+        <div class="row" style="background-color:#EDF5FC;">
+          <div class="col-md-4">
+             <img src="/static/image/care.png" alt="" width="100%">
+          </div>
+          <div class="col-md-6" style="padding-bottom: 150px;">
+              <h6 class="my-3 p1" style="padding: 5px;">WHY YOU SHOULD KNOW YOUR SKIN TYPE BEFORE CHOOSING ANY SKIN CARE PRODUCT</h6>
+              <p class="p1" >All different skin types which include oily, dry, normal, combination, and sensitive skin have different needs and not to be treated with a one-size-fits-all approach. That's why understanding your skin type is the first step in properly caring for it.</p>
+
+              <p  class="p1">These advantages include: Using the right products- without a thorough understanding of your skin type you may apply products that are simply not suitable, and could cause skin irritations or reactions. Instead, with knowledge about your skin type you can be sure to make the right product and treatment choices.</p>
+
+          </div>
+        </div>
+
+        <!-- Fourt Stack -->
+        <div class="row curved_div" style="padding-left: 30px;padding: 20px;background-color: whitesmoke ;justify-content: space-around;">
+          <h6 style="font-size: 20px; font-family: Arial, Helvetica, sans-serif;padding: 10px;">WHY YOU SHOULD CHOOSE US</h6>
+        <div class="col-md-2 choose" style=" background-color:white ;" >
+          <div  style="display: flex; justify-content: center; align-items: center; padding: 30px;background-color: #EDF5FC;" class="rounded-circle mx-5 my-3"><img src="/static/image/imagey.png" alt="" width="150%"></div>
+          <h6>Safe & Secure Skincare Decision</h6>
+        </div>
+          <div class="col-md-2 choose" style=" background-color:white;">
+           <div style="padding: 30px;background-color: #EDF5FC;" class="rounded-circle mx-5 my-3"><i class="fa-solid fa-person-rays fa-2xl" style="color: #505168;"></i></div> 
+            <h6 >Better Skincare Result</h6>
+          </div>
+             <div class="col-md-2 choose" style="background-color:white;">
+              <div style="display: flex; justify-content: center; align-items: center; padding: 30px;background-color: #EDF5FC;" class="rounded-circle mx-5 my-3"><img src="/static/image/carey.png" alt=""  width="150%"></div>
+              <h6>Easy Access To Skincare Products</h6>
+             </div>
+             <div class="col-md-2 choose" style="background-color:white;">
+              <div style="padding: 30px;background-color: #EDF5FC;" class="rounded-circle mx-5 my-3"><i class="fa-sharp fa-solid fa-truck fa-beat-fade fa-2xl" style="color: #505168;"></i></div>
+              <h6>Fast Delivery</h6>
+
+
+             </div>
+        </div>
+
+      </div>
+
+      <div class="col-2">
+
+      </div>
+
+      <div class="col-2 my-5 mx-5 justify-content-center" >
+          
+
+        <a href="#top" class="col-1 go" style="justify-content: right;">Go UP</a>
+        <!-- text-decoration:none; background-color:red;color: white; padding:10px; margin:20px -->
+  
+      </div>
+
+       </div>
+ </div>
+ 
+      <script src="bootstrap/js/bootstrap.bundle.js">
+
+
+      </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#
+
+  <style>
+      .list-hidden {
+     display: none;
+   }
+   
+   .hover-link:hover + .list-hidden {
+     display: block;
+   }
+   
+   .line{
+     border: none;
+     border-top: 1px solid rgb(188, 184, 184);
+     width: 100%;
+     margin-top: 3px;
+   }
+  
+   .center-img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+   }
+   </style>
+   
+   
+   
+   
+   
+   {% include "parts/header2.html" %}
+   
+           <!-- 2nd stack -->
+           <div  class="row">
+          
+              
+           </div>
+           <div class="row bg" style="padding-top: 15px;" >
+               <div class="col-md overlay">
+                 <div class="col-md-4 overlay_div text-light mx-5">
+                   <h5 class="header1" style="font-size: 30px; ">Feel <br> Comfortable in <br> Flawless Skin</h5>
+                   <h6 class="header1">Your Skin is unique and do not need a one-size-fits-all approach <br>Know your skin type and get tailored solution that meet your specific need</h6>
+              
+                 
+                   <div class="row" style="padding: 10px;">
+                     <div class="col-md" style="padding: 10px;">
+                       <img src="/static/image/care1.jpg" alt="serum pix" class="img-fluid rounded-circle">
+                     </div>
+                     <div class="col-md care">
+                        <img src="/static/image/care_3.jpg" alt="" class="img-fluid rounded-circle">
+                     </div>
+                     <div class="col-md img-fluid rounded-circle care">
+                        <img src="/static/image/care5.jpg" alt=""  class="img-fluid rounded-circle">
+                     </div>
+                     <div class="col-md img-fluid rounded-circle care">
+                       <img src="/static/image/care.new.jpg" alt=""  class="img-fluid rounded-circle">
+                     </div>
+                   </div>
+               
+                   
+                 </div>
+                 <div>
+                   <a href="">
+                     <a href="#" class="hover-link">Hover me</a>
+                                 <ul class="list-hidden">
+                                 <li>Item 1</li>
+                                 <li>Item 2</li>
+                                 <li>Item 3</li>
+                                 </ul>
+                 </a>
+                   <h1 style="text-align: center; color: white;">SKINCARE PLANNER</h1>
+                   <h6  class="header1" style="text-align: center;color: white;">SIGN UP BELOW TO GET STARTED</h6>
+                   <div style="display: flex; justify-content: center; align-items: center;">
+                   <button type="button" class="mb-3 mx-5 btn btn-primary">SIGN UP</button>
+                   <button type="button" class="mb-3 mx-3 btn btn-outline-primary">Login</button>
+                   </div>
+   
+   
+                 </div>
+                     </div>
+                   
+                 </div>
+   
+             <!-- Third stack -->
+             <div class="row" style="background-color: rgb(212, 210, 210);">
+               <div class="col-md-3 my-3" style="border-radius: 2px; background-color: rgb(212, 210, 210);">
+             
+                   <h5>SKIN TYPES</h5>
+                   <div  style="border-radius: 2px; background-color: white;">
+                     <a href="" style="text-decoration: none;">
+                       <ul>
+                           <li>Normal Skin</li>
+                         <p class="line"></p>
+                           <li>Dry Skin</li>
+                         <p class="line"></p>
+                           <li>Oily Skin</li>
+                         <p class="line"></p>
+                           <li>Sensitive Skin</li>
+                         <p class="line"></p>
+                           <li>Combination Skin</li>
+   
+                       </ul>
+   
+                     </a>
+                    </div>
+   
+             
+                
+               </div>
+           
+      
+               <div class="col">
+   
+                 <div class="row">
+                  {% for product in products %}
+                   <div class="col-md-3 my-3 mx-2" style="border-radius: 5px; background-color: white;min-width: 30%;">
+                   <a href=""><img src="{{ url_for('static',filename='collections/' + product.prod_cover)}}" alt="" width="100%"></a> 
+                     <p class="line"></p>
+                     <h6 class="mx-2">{{product.product_name}}</h6>
+                     <p class="mx-2" style="font-size: 25px;"> {{product.product_price}}</p>
+                     <p class="line"></p>
+                     <div>
+                       <form action="" method="post">
+                         <p class="my-3 mx-4"> <button class="btn  btn-outline-primary" style="padding: 15px; margin: 10px;" class="mx-5">ADD TO CART</button></p>
+                       </form>
+                     </div>
+                     {% endfor %}
+                   </div>
+                 {#
+                   <div class="col-md-3 mx-2 my-3" style="border-radius: 5px; background-color: white;min-width: 30%; padding-bottom: 5px;">
+                     <a href="#"><img src="/static/image/Neut_dry.png" alt="" width="100%"></a>
+                     <p class="line"></p>
+                     <h6 class="mx-2">Neutrogena, Hydro Boost Water Gel</h6>
+                     <p class="mx-2" style="font-size: 25px;"> ₦5000</p>
+                     <p class="line"></p>
+                     <div>
+                       <form action="" method="post">
+                         <p class="my-3 mx-4"> <button class="btn  btn-outline-primary" style="padding: 15px; margin: 10px;" class="mx-5">ADD TO CART</button></p>
+                       </form>
+                     </div>
+                    
+                     
+                   </div>
+   
+                      
+                   <div class="col-md-3 mx-2 my-3" style="border-radius: 5px; background-color: white;min-width: 30%;">
+                     <a href="#"><img src="/static/image/eucerin_oil_img.jpg" alt="" width="100%"></a>
+                          <p class="line"></p>
+                     <h6 class="mx-2">Eucerin, Oil Control, Lightweight Sunscreen Lotion for Face, SPF 50, 2.5 fl oz (75 ml)</h6>
+                     <p class="mx-2" style="font-size: 25px;"> ₦8000</p>
+                     <p class="line"></p>
+                     <div>
+                       <form action="" method="post">
+                         <p class="my-3 mx-4"> <button class="btn  btn-outline-primary" style="padding: 15px; margin: 10px;" class="mx-5">ADD TO CART</button></p>
+                       </form>
+                     </div>
+                   
+                   </div>
+                   #}
+   {#
+                   <div class="col-md-3 my-3" style="border-radius: 5px; background-color: white;min-width: 30%;">
+                     <a href=""><img src="/static/image/cetaphil_cleanser_combo.png" alt="cleanser for all skin types" width="100%"></a>
+                          <p class="line"></p>
+                     <h6 class="mx-2">Cetaphil Face And Body Gentle Skin Cleanser For All Skin Types</h6>
+                     <p class="mx-2" style="font-size: 25px;"> ₦8000</p>
+                     <p class="line"></p>
+                     <div>
+                       <form action="" method="post">
+                         <p class="my-3 mx-4"> <button class="btn  btn-outline-primary" style="padding: 15px; margin: 10px;" class="mx-5">ADD TO CART</button></p>
+                       </form>
+                     </div>
+                   
+                   </div>
+   
+                   <div class="col-md-3 mx-3 my-3" style="border-radius: 5px; background-color: white;min-width: 30%;">
+                     <a href="#"><img src="/static/image/eucerin_sensitive_img.jpeg" alt="personalized skincare for sensitive skin type" width="100%"></a>
+                          <p class="line"></p>
+                     <h6 class="mx-2">Eucerin Sun Spray SPF 50+ Sensitive Skin 200 Ml</h6>
+                     <p class="mx-2" style="font-size: 25px;"> ₦11000</p>
+                     <p class="line"></p>
+                     <div>
+                       <form action="" method="post">
+                         <p class="my-3 mx-4"> <button class="btn  btn-outline-primary" style="padding: 15px; margin: 10px;" class="mx-5">ADD TO CART</button></p>
+                       </form>
+                     </div>
+                 
+                    </div>
+   
+                    <div class="col-md-3 mx-3 my-3" style="border-radius: 5px; background-color: white;min-width: 30%;">
+                     <a href="#"><img src="/static/image/cetaphil_cleanser_oily.jpg" alt="personalized skincare for sensitive skin type" width="100%"></a>
+                          <p class="line"></p>
+                     <h6 class="mx-2"> Cetaphil PRO DermaControl Foam Wash 8 oz - Packaging May Vary</h6>
+                     <p class="mx-2" style="font-size: 25px;"> ₦11000</p>
+                     <p class="line"></p>
+                     <div>
+                       <form action="" method="post">
+                         <p class="my-3 mx-4"> <button class="btn  btn-outline-primary" style="padding: 15px; margin: 10px;" class="mx-5">ADD TO CART</button></p>
+                       </form>
+                     </div>
+                     </div>
+                     #}
+                   
+                   
+                   </div>
+              </div>
+   
+               
+          
+   
+         <!-- Fifth Stack -->
+      
+             <!--  -->
+         
+    
+       </div>
+       
+    
+      {% include "parts/footer.html" %}
+      #}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="row" style="background-color: rgb(212, 210, 210);">
+        <div class="col-md-3 my-3" style="border-radius: 5px; background-color: white;min-width: 30%;">
+          <a href=""><img src="/static/image/cetaphil_cleanser_combo.png" alt="cleanser for all skin types" width="100%"></a>
+               <p class="line"></p>
+          <h6 class="mx-2">Cetaphil Face And Body Gentle Skin Cleanser For All Skin Types</h6>
+          <p class="mx-2" style="font-size: 25px;"> ₦8000</p>
+          <p class="line"></p>
+          <div>
+            <form action="" method="post">
+              <p class="my-3 mx-4"> <button class="btn  btn-outline-primary" style="padding: 15px; margin: 10px;" class="mx-5">ADD TO CART</button></p>
+            </form>
+          </div>
+        
+        </div>
+
+        <div class="col">
+          
+          <div class="row">
+
+
+            
+          </div>
+        </div>
+        <div class="col-md-3 mx-2 my-3" style="border-radius: 5px; background-color: white;min-width: 30%;">
+          <a href="#"><img src="/static/image/eucerin_sensitive_img.jpeg" alt="personalized skincare for sensitive skin type" width="100%"></a>
+               <p class="line"></p>
+          <h6 class="mx-2">Eucerin Sun Spray SPF 50+ Sensitive Skin 200 Ml</h6>
+          <p class="mx-2" style="font-size: 25px;"> ₦11000</p>
+          <p class="line"></p>
+          <div>
+            <form action="" method="post">
+              <p class="my-3 mx-4"> <button class="btn  btn-outline-primary" style="padding: 15px; margin: 10px;" class="mx-5">ADD TO CART</button></p>
+            </form>
+          </div>
+      
+         </div>
+
+         <div class="col-md-3 mx-2 my-3" style="border-radius: 5px; background-color: white;min-width: 30%;">
+          <a href="#"><img src="/static/image/cetaphil_cleanser_oily.jpg" alt="personalized skincare for sensitive skin type" width="100%"></a>
+               <p class="line"></p>
+          <h6 class="mx-2"> Cetaphil PRO DermaControl Foam Wash 8 oz - Packaging May Vary</h6>
+          <p class="mx-2" style="font-size: 25px;"> ₦11000</p>
+          <p class="line"></p>
+          <div>
+            <form action="" method="post">
+              <p class="my-3 mx-4"> <button class="btn  btn-outline-primary" style="padding: 15px; margin: 10px;" class="mx-5">ADD TO CART</button></p>
+            </form>
+          </div>
+          </div>
+
+          <div class="col-md-3 mx-2 my-3" style="border-radius: 5px; background-color: white;min-width: 30%;">
+            <a href="#"><img src="/static/image/cetaphil_cleanser_oily.jpg" alt="personalized skincare for sensitive skin type" width="100%"></a>
+                 <p class="line"></p>
+            <h6 class="mx-2"> Cetaphil PRO DermaControl Foam Wash 8 oz - Packaging May Vary</h6>
+            <p class="mx-2" style="font-size: 25px;"> ₦11000</p>
+            <p class="line"></p>
+            <div>
+              <form action="" method="post">
+                <p class="my-3 mx-4"> <button class="btn  btn-outline-primary" style="padding: 15px; margin: 10px;" class="mx-5">ADD TO CART</button></p>
+              </form>
+            </div>
+            </div>
+       </div>
