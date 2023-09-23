@@ -353,9 +353,9 @@ def my_orders():
     return render_template("user/my_orders.html", order=order,userdeets=userdeets)        
 
 
-@app.errorhandler(500)
-def programmingerror(error):
-    return "Something went wrong. We are still in control please try again later",500
+# @app.errorhandler(500)
+# def programmingerror(error):
+#     return "Something went wrong. We are still in control please try again later",500
 
 
 
